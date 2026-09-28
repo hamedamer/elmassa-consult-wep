@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
@@ -13,8 +13,8 @@ import ScrollToTop from './components/ScrollToTop.jsx'
 
 export default function App() {
   return (
-    <BrowserRouter basename="/elmassa-consult-wep">
-      <ScrollToTop /> {/* تم نقله إلى هنا (داخل BrowserRouter وخارج Routes) */}
+    <HashRouter>
+      <ScrollToTop />
       <div className="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
         <Header />
         <main className="flex-1">
@@ -31,6 +31,6 @@ export default function App() {
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

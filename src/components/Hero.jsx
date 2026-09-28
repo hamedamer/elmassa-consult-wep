@@ -16,10 +16,10 @@ export default function Hero() {
             From 3D Laser Scanning and Digital Twins to Multi-Disciplinary BIM & Land Surveying Solutions — We bridge physical assets with digital reality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="\services" className="bg-brandRed hover:bg-red-600 text-white font-bold px-8 py-3.5 rounded-md text-center transition shadow-lg">
+            <Link to="/services" className="bg-brandRed hover:bg-red-600 text-white font-bold px-8 py-3.5 rounded-md text-center transition shadow-lg">
               Explore Our Services
             </Link>
-            <Link to="\contact" className="border border-gray-400 hover:border-white text-white font-semibold px-8 py-3.5 rounded-md text-center transition">
+            <Link to="/contact" className="border border-gray-400 hover:border-white text-white font-semibold px-8 py-3.5 rounded-md text-center transition">
               Request Proposal
             </Link>
           </div>
