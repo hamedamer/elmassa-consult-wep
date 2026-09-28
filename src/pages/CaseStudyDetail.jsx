@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-// بيانات التفاصيل وتوحيد مسارات الصور الأساسية والمعرض
 const caseStudiesData = [
   {
     id: 1,
@@ -13,17 +12,16 @@ const caseStudiesData = [
     duration: "3 Weeks",
     software: "Autodesk Revit, CloudCompare, PointCab",
     description: "Converted high-density point cloud data into precise Architectural & Structural Revit BIM models for facility expansion and clash detection.",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     gallery: [
-      "/images/CaseStudy/images.png",
-      "/images/service-5.png",
-      "/images/service-3.png",
-      "/images/service-2.png",
-      "/images/service-1.png",
-      "/images/scan-data.png",
-      "/images/scan-banner.png",
-      "/images/scan-data.png",
-
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/service-5.png`,
+      `${import.meta.env.BASE_URL}images/service-3.png`,
+      `${import.meta.env.BASE_URL}images/service-2.png`,
+      `${import.meta.env.BASE_URL}images/service-1.png`,
+      `${import.meta.env.BASE_URL}images/scan-data.png`,
+      `${import.meta.env.BASE_URL}images/scan-banner.png`,
+      `${import.meta.env.BASE_URL}images/scan-data.png`,
     ]
   },
   {
@@ -35,12 +33,12 @@ const caseStudiesData = [
     duration: "6 Weeks",
     software: "ArcGIS Pro, Civil 3D, PostGIS",
     description: "Developed comprehensive spatial database schema and network topology for large-scale infrastructure and electrical utilities.",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     gallery: [
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png"
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
     ]
   },
   {
@@ -53,11 +51,11 @@ const caseStudiesData = [
     duration: "4 Weeks",
     software: "Autodesk Revit, Leica Cyclone",
     description: "Captured complex architectural details using 3D laser scanning to build an accurate LOD 300 Revit model for restoration.",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     gallery: [
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png"
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
     ]
   },
   {
@@ -70,11 +68,11 @@ const caseStudiesData = [
     duration: "2 Weeks",
     software: "AutoCAD, Revit MEP",
     description: "Processed raw point cloud files to generate detailed 2D CAD architectural drawings and 3D MEP routing models.",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     gallery: [
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png"
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
     ]
   },
   {
@@ -86,11 +84,11 @@ const caseStudiesData = [
     duration: "8 Weeks",
     software: "ArcGIS Online, Revit, Unity",
     description: "Integrated 3D elevation surface models with GIS spatial layers for smart site monitoring and facility management.",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     gallery: [
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png"
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
     ]
   },
   {
@@ -103,10 +101,10 @@ const caseStudiesData = [
     duration: "3 Weeks",
     software: "Autodesk Revit, Faro Scene",
     description: "Delivered accurate as-built BIM models from laser scans to help architects eliminate site clashes during renovation.",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     gallery: [
-      "/images/CaseStudy/images.png",
-      "/images/CaseStudy/images.png"
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
+      `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
     ]
   }
 ];
@@ -115,10 +113,7 @@ export default function CaseStudyDetail() {
   const { id } = useParams();
   const project = caseStudiesData.find((p) => p.id === parseInt(id));
 
-  // التحكم في حالة التكبير والنافذة المفتوحة
   const [lightboxIndex, setLightboxIndex] = useState(null);
-
-  // مرجع للتحكم في التمرير الأفقي للسلايدر
   const sliderRef = useRef(null);
 
   if (!project) {
@@ -133,7 +128,6 @@ export default function CaseStudyDetail() {
     );
   }
 
-  // دوال تمرير معرض الصور السريع في الصفحة
   const scrollLeft = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollBy({ left: -320, behavior: 'smooth' });
@@ -146,7 +140,6 @@ export default function CaseStudyDetail() {
     }
   };
 
-  // دوال التنقل داخل الـ Lightbox المفتوح
   const handleLightboxPrev = (e) => {
     e.stopPropagation();
     setLightboxIndex((prev) => (prev === 0 ? project.gallery.length - 1 : prev - 1));
@@ -159,7 +152,6 @@ export default function CaseStudyDetail() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* 1. HERO SECTION */}
       <section className="relative bg-brandNavy text-white py-16 overflow-hidden">
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -174,9 +166,7 @@ export default function CaseStudyDetail() {
       </section>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* 2. PROJECT OVERVIEW & SPECS */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 mb-12">
-          {/* الصورة الأساسية الموحدة للمشروع */}
           <div className="w-full h-80 sm:h-96 rounded-xl overflow-hidden mb-8 border border-gray-100 bg-neutral-900">
             <img 
               src={project.image} 
@@ -210,7 +200,6 @@ export default function CaseStudyDetail() {
           </p>
         </div>
 
-        {/* 3. PROJECT GALLERY SECTION (سلايدر أفقي بالأسهم مثل الفيديو تماماً) */}
         {project.gallery && project.gallery.length > 0 && (
           <section className="mb-12 relative">
             <div className="text-center mb-8">
@@ -222,9 +211,7 @@ export default function CaseStudyDetail() {
               </p>
             </div>
 
-            {/* حاوي السلايدر مع أسهم التنقل */}
             <div className="relative group/gallery px-4">
-              {/* سهم التنقل لليسار */}
               <button 
                 onClick={scrollLeft}
                 className="absolute -left-2 sm:left-1 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-brandRed hover:text-white text-gray-800 w-11 h-11 rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-lg transition-all"
@@ -233,7 +220,6 @@ export default function CaseStudyDetail() {
                 ❮
               </button>
 
-              {/* معرض الصور المنساب أفقياً */}
               <div 
                 ref={sliderRef}
                 className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth py-4 px-2"
@@ -259,7 +245,6 @@ export default function CaseStudyDetail() {
                 ))}
               </div>
 
-              {/* سهم التنقل لليمين */}
               <button 
                 onClick={scrollRight}
                 className="absolute -right-2 sm:right-1 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-brandRed hover:text-white text-gray-800 w-11 h-11 rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-lg transition-all"
@@ -271,13 +256,11 @@ export default function CaseStudyDetail() {
           </section>
         )}
 
-        {/* 4. LIGHTBOX MODAL FULLSCREEN (فتح وإغلاق الصورة والتنقل المباشر) */}
         {lightboxIndex !== null && (
           <div 
             className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 select-none"
             onClick={() => setLightboxIndex(null)}
           >
-            {/* زر الإغلاق */}
             <button 
               onClick={() => setLightboxIndex(null)}
               className="absolute top-4 right-4 bg-white/10 hover:bg-brandRed text-white w-10 h-10 rounded-full font-bold flex items-center justify-center text-lg transition z-50"
@@ -285,12 +268,10 @@ export default function CaseStudyDetail() {
               ✕
             </button>
 
-            {/* مؤشر العداد (مثل 1/5) */}
             <div className="absolute top-4 left-4 text-white/80 text-xs font-semibold bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
               {lightboxIndex + 1} / {project.gallery.length}
             </div>
 
-            {/* سهم السابق داخل النافذة */}
             <button 
               onClick={handleLightboxPrev}
               className="absolute left-4 sm:left-8 bg-white/10 hover:bg-brandRed text-white w-12 h-12 rounded-full flex items-center justify-center text-xl transition border border-white/20 shadow-lg z-50"
@@ -298,7 +279,6 @@ export default function CaseStudyDetail() {
               ❮
             </button>
 
-            {/* الصورة المكبرة */}
             <div className="relative max-w-5xl w-full flex flex-col items-center justify-center px-10">
               <img 
                 src={project.gallery[lightboxIndex]} 
@@ -307,7 +287,6 @@ export default function CaseStudyDetail() {
               />
             </div>
 
-            {/* سهم التالي داخل النافذة */}
             <button 
               onClick={handleLightboxNext}
               className="absolute right-4 sm:right-8 bg-white/10 hover:bg-brandRed text-white w-12 h-12 rounded-full flex items-center justify-center text-xl transition border border-white/20 shadow-lg z-50"
@@ -317,7 +296,6 @@ export default function CaseStudyDetail() {
           </div>
         )}
 
-        {/* 5. CTA SECTION */}
         <div className="bg-brandNavy text-white rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
           <div className="relative z-10">

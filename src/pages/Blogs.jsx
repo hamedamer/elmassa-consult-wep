@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const blogsData = [
@@ -9,7 +9,7 @@ export const blogsData = [
     author: "admin",
     date: "8 Sep, 2026",
     readTime: "6 Min Read",
-    image: "/images/Surveys-.jpg",
+    image: `${import.meta.env.BASE_URL}images/Surveys-.jpg`,
     excerpt: "The AEC industry is rapidly shifting towards data-driven project delivery. Whether it is renovation, retrofit, or adaptive reuse, high-quality existing building documentation is essential.",
     isFeatured: true
   },
@@ -20,7 +20,7 @@ export const blogsData = [
     author: "Dolly Bulchandani",
     date: "7 Aug, 2026",
     readTime: "7 Min Read",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     excerpt: "Modern construction projects demands precision, speed and seamless collaboration. However, one of the biggest challenges during design is the gap between surveyors and architects."
   },
   {
@@ -30,7 +30,7 @@ export const blogsData = [
     author: "Dolly Bulchandani",
     date: "27 Jul, 2026",
     readTime: "6 Min Read",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     excerpt: "3D Laser scanning has radically changed existing conditions modeling. Discover how to handle large point cloud datasets efficiently."
   },
   {
@@ -40,7 +40,7 @@ export const blogsData = [
     author: "Dolly Bulchandani",
     date: "18 Jul, 2026",
     readTime: "5 Min Read",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     excerpt: "CAD files remain essential for construction workflows. Learn how automated point cloud extraction speeds up draft delivery."
   }
 ];
@@ -51,13 +51,7 @@ export default function Blogs() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-
-
-     {/* ========================================================= */}
-      {/* 1. HERO SECTION - خلفية النقاط الناعمة الموحدة */}
-      {/* ========================================================= */}
       <section className="relative bg-brandNavy text-white py-20 overflow-hidden">
-        {/* طبقة خلفية النقاط */}
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -71,7 +65,6 @@ export default function Blogs() {
       </section>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* 2. FEATURED POST */}
         <Link 
           to={`/blogs/${featuredPost.id}`}
           className="group grid grid-cols-1 md:grid-cols-2 bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-12 hover:shadow-md transition"
@@ -105,7 +98,6 @@ export default function Blogs() {
           </div>
         </Link>
 
-        {/* 3. BLOGS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {regularPosts.map((post) => (
             <Link 

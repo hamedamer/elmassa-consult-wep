@@ -6,7 +6,7 @@ export default function Footer() {
 
           <div className="space-y-4">
             <a href="#" className="inline-block bg-white p-2 rounded-lg shadow-sm">
-              <img src="/images/images.png" alt="EL MASSA CONSULT Logo" className="h-16 w-auto object-contain" />
+              <img src={`${import.meta.env.BASE_URL}images/images.png`} alt="EL MASSA CONSULT Logo" className="h-16 w-auto object-contain" />
             </a>
             <p className="text-xs text-gray-300 leading-relaxed pt-2">
               Leading provider of 3D Laser Scanning, Scan to BIM, Digital Twin creation, and Multi-Disciplinary Engineering Services globally.

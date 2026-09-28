@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// قائمة دراسات الحالة / المشاريع السابقة
 const caseStudies = [
   {
     id: 1,
@@ -10,7 +9,7 @@ const caseStudies = [
     category: "Scan to BIM",
     location: "Saudi Arabia",
     description: "Converted high-density point cloud data into precise Architectural & Structural Revit BIM models for facility expansion.",
-    image: "/images/CaseStudy/images.png"
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 2,
@@ -18,7 +17,7 @@ const caseStudies = [
     category: "GIS & Spatial",
     location: "Egypt",
     description: "Developed comprehensive spatial database schema and network topology for large-scale infrastructure and electrical utilities.",
-    image: "/images/CaseStudy/images.png"
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 3,
@@ -27,7 +26,7 @@ const caseStudies = [
     category: "3D Modeling",
     location: "UAE",
     description: "Captured complex architectural details using 3D laser scanning to build an accurate LOD 300 Revit model for restoration.",
-    image: "/images/CaseStudy/images.png"
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 4,
@@ -36,7 +35,7 @@ const caseStudies = [
     category: "CAD Conversion",
     location: "Germany",
     description: "Processed raw point cloud files to generate detailed 2D CAD architectural drawings and 3D MEP routing models.",
-    image: "/images/CaseStudy/images.png"
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 5,
@@ -44,7 +43,7 @@ const caseStudies = [
     category: "Digital Twin & GIS",
     location: "Saudi Arabia",
     description: "Integrated 3D elevation surface models with GIS spatial layers for smart site monitoring and facility management.",
-    image: "/images/CaseStudy/images.png"
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 6,
@@ -53,19 +52,14 @@ const caseStudies = [
     category: "Scan to BIM",
     location: "United Kingdom",
     description: "Delivered accurate as-built BIM models from laser scans to help architects eliminate site clashes during renovation.",
-    image: "/images/CaseStudy/images.png"
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   }
 ];
 
 export default function CaseStudies() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      
-      {/* ========================================================= */}
-      {/* 1. HERO SECTION - خلفية النقاط الموحدة */}
-      {/* ========================================================= */}
       <section className="relative bg-brandNavy text-white py-20 overflow-hidden">
-        {/* خلفية النقاط الناعمة الموحدة */}
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -81,9 +75,6 @@ export default function CaseStudies() {
         </div>
       </section>
 
-      {/* ========================================================= */}
-      {/* 2. PROJECTS GRID SECTION */}
-      {/* ========================================================= */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {caseStudies.map((project) => (
@@ -91,7 +82,6 @@ export default function CaseStudies() {
               key={project.id} 
               className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group"
             >
-              {/* صورة المشروع */}
               <div className="h-52 w-full bg-neutral-900 overflow-hidden relative">
                 <img 
                   src={project.image} 
@@ -99,18 +89,15 @@ export default function CaseStudies() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
                 
-                {/* Badge التخصص */}
                 <span className="absolute top-3 left-3 bg-brandNavy/90 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full border border-white/10">
                   {project.category}
                 </span>
 
-                {/* Badge الدولة */}
                 <span className="absolute top-3 right-3 bg-neutral-900/80 backdrop-blur-md text-gray-300 text-[10px] font-medium px-2.5 py-1 rounded-md border border-white/10">
                   📍 {project.location}
                 </span>
               </div>
 
-              {/* تفاصيل المشروع */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-brandRed transition-colors">
@@ -126,7 +113,6 @@ export default function CaseStudies() {
                   </p>
                 </div>
 
-                {/* رابط تفاصيل المشروع بـ Link */}
                 <Link 
                   to={`/CaseStudyDetail/${project.id}`} 
                   className="inline-flex items-center justify-between w-full pt-4 border-t border-gray-100 text-xs font-bold text-brandNavy hover:text-brandRed transition-colors"
@@ -139,9 +125,6 @@ export default function CaseStudies() {
           ))}
         </div>
 
-        {/* ========================================================= */}
-        {/* 3. CTA SECTION */}
-        {/* ========================================================= */}
         <section className="mt-16 bg-brandNavy text-white rounded-3xl p-8 sm:p-12 text-center flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden shadow-xl">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
           

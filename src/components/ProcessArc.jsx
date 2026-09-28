@@ -75,7 +75,7 @@ export default function ProcessArc() {
                 <div className="w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center shrink-0">
                   {activeStep.image ? (
                     <img
-                      src={`/images/${activeStep.image}`}
+                      src={`${import.meta.env.BASE_URL}images/${activeStep.image}`}
                       alt={activeStep.imageAlt}
                       className="w-full h-full object-contain animate-bounce-slow"
                     />

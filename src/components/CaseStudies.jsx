@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const projectDetails = [
   { label: 'Project Name', value: 'Commercial Facility Hub' },
   { label: 'Project Type', value: 'Commercial / Institutional' },
@@ -47,7 +49,7 @@ export default function CaseStudies() {
                   href="javascript:void(0)"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-brandNavy to-slate-800 hover:from-brandRed hover:to-red-600 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition duration-300 shadow-md hover:shadow-lg"
                 >
-                  <a href="\CaseStudies" >Explore Case Studies</a>
+                  <Link to="\CaseStudies" >Explore Case Studies</Link>
                   <i className="fa-solid fa-arrow-right text-xs"></i>
                 </a>
               </div>
@@ -56,7 +58,7 @@ export default function CaseStudies() {
             <div className="lg:col-span-6">
               <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-md group">
                 <img
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+                  src={`${import.meta.env.BASE_URL}images/wewe.avif`}
                   alt="Featured BIM Project Showcase"
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
                 />

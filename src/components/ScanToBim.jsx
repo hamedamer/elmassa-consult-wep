@@ -41,9 +41,9 @@ export default function ScanToBim() {
 
               <div className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto">
                 <img
-                  src="/images/scan-banner.png"
+                  src={`${import.meta.env.BASE_URL}images/scan-banner.png`}
                   alt="Scan to BIM 3D Model & Laser Equipment"
-                  className ="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 

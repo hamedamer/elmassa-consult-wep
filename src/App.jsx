@@ -13,7 +13,7 @@ import ScrollToTop from './components/ScrollToTop.jsx'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/elmassa-consult-wep">
       <ScrollToTop /> {/* تم نقله إلى هنا (داخل BrowserRouter وخارج Routes) */}
       <div className="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
         <Header />

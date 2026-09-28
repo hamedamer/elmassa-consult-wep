@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-// يمكن استيراد هذه القائمة من ملف Blogs.jsx أو كتابتها هنا كمرجع للبيانات
 export const blogsData = [
   {
     id: 1,
@@ -10,7 +9,7 @@ export const blogsData = [
     author: "admin",
     date: "8 Sep, 2026",
     readTime: "6 Min Read",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     excerpt: "The AEC industry is rapidly shifting towards data-driven project delivery. Whether it is renovation, retrofit, or adaptive reuse, high-quality existing building documentation is essential.",
     content: `
       Traditional land surveying methods have served the construction industry well for decades. However, as projects grow in architectural complexity and schedules tighten, 3D Laser Scanning (Scan to BIM) has become the gold standard.
@@ -31,7 +30,7 @@ export const blogsData = [
     author: "Dolly Bulchandani",
     date: "7 Aug, 2026",
     readTime: "7 Min Read",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     excerpt: "Modern construction projects demands precision, speed and seamless collaboration. However, one of the biggest challenges during design is the gap between surveyors and architects.",
     content: `
       Modern construction projects demand precision, speed, and seamless collaboration. However, one of the biggest challenges during design is the gap between surveyors and architects.
@@ -59,7 +58,7 @@ export const blogsData = [
     author: "Dolly Bulchandani",
     date: "27 Jul, 2026",
     readTime: "6 Min Read",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     excerpt: "3D Laser scanning has radically changed existing conditions modeling. Discover how to handle large point cloud datasets efficiently.",
     content: `
       3D Laser scanning has radically changed existing conditions modeling. Industrial facilities are among the most complex environments to digitize.
@@ -74,7 +73,7 @@ export const blogsData = [
     author: "Dolly Bulchandani",
     date: "18 Jul, 2026",
     readTime: "5 Min Read",
-    image: "/images/CaseStudy/images.png",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`,
     excerpt: "CAD files remain essential for construction workflows. Learn how automated point cloud extraction speeds up draft delivery.",
     content: `
       In today's design-driven AEC workflows, CAD files are as vital as 3D models. Extracting clean line work and precise floor plans from point clouds reduces manual drafting errors and keeps project schedules on track.
@@ -85,7 +84,6 @@ export const blogsData = [
 export default function BlogDetail() {
   const { id } = useParams();
 
-  // تمرير الصفحة لأعلى عند اختيار مقال جديد تلقائياً
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
@@ -104,12 +102,10 @@ export default function BlogDetail() {
     );
   }
 
-  // تصفية باقي المقالات لإظهار المقالات المقترحة
   const similarBlogs = blogsData.filter((b) => b.id !== post.id).slice(0, 3);
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* 1. ARTICLE HEADER SECTION */}
       <section className="bg-brandNavy text-white py-12 px-4">
         <div className="max-w-3xl mx-auto">
           <Link to="/blogs" className="text-brandRed text-xs font-bold uppercase mb-4 inline-block hover:underline">
@@ -131,10 +127,8 @@ export default function BlogDetail() {
         </div>
       </section>
 
-      {/* 2. MAIN CONTENT SECTION */}
       <main className="max-w-3xl mx-auto px-4 py-10">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-10 mb-12">
-          {/* الصورة البارزة للمقال */}
           <div className="w-full h-72 sm:h-96 rounded-xl overflow-hidden mb-8 bg-neutral-900 border border-gray-100">
             <img 
               src={post.image} 
@@ -143,13 +137,11 @@ export default function BlogDetail() {
             />
           </div>
 
-          {/* نص محتوى المقال */}
           <article className="prose max-w-none text-gray-700 leading-relaxed text-sm sm:text-base space-y-4 whitespace-pre-line">
             {post.content}
           </article>
         </div>
 
-        {/* 3. SIMILAR BLOGS SECTION */}
         {similarBlogs.length > 0 && (
           <section className="pt-6 border-t border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Similar Blogs</h3>

@@ -17,7 +17,11 @@ export default function ComprehensiveServices() {
                 {s.title}
               </h3>
               <div className="w-[72px] h-[72px] rounded-xl flex items-center justify-center shrink-0 mb-1 transition-colors duration-300 group-hover:bg-brandRed/15">
-                <img src={`/images/${s.image}`} alt={s.alt} className="object-contain w-full h-full" />
+                <img 
+                  src={`${import.meta.env.BASE_URL}images/${s.image}`} 
+                  alt={s.alt} 
+                  className="object-contain w-full h-full" 
+                />
               </div>
             </div>
             <p className="text-gray-400 text-[0.72rem] leading-relaxed mt-1">{s.description}</p>

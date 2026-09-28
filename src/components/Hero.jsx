@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Hero() {
   return (
     <section id="home" className="relative bg-brandNavy text-white py-24 lg:py-32 overflow-hidden">
@@ -14,12 +16,12 @@ export default function Hero() {
             From 3D Laser Scanning and Digital Twins to Multi-Disciplinary BIM & Land Surveying Solutions — We bridge physical assets with digital reality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="\services" className="bg-brandRed hover:bg-red-600 text-white font-bold px-8 py-3.5 rounded-md text-center transition shadow-lg">
+            <Link to="\services" className="bg-brandRed hover:bg-red-600 text-white font-bold px-8 py-3.5 rounded-md text-center transition shadow-lg">
               Explore Our Services
-            </a>
-            <a href="\contact" className="border border-gray-400 hover:border-white text-white font-semibold px-8 py-3.5 rounded-md text-center transition">
+            </Link>
+            <Link to="\contact" className="border border-gray-400 hover:border-white text-white font-semibold px-8 py-3.5 rounded-md text-center transition">
               Request Proposal
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// =========================================================================
-// بيانات الخدمات المكتملة بالتفصيل
-// =========================================================================
 export const servicesData = [
     {
         id: 'scan-to-bim',
@@ -14,7 +11,7 @@ export const servicesData = [
         bullets: ['LOD 100–500', 'Revit Architectural & Structural', 'Millimeter Accuracy', 'Fast Project Turnaround'],
         ctaText: 'Upload Point Cloud Data',
         overviewText: 'Our Scan to BIM services convert point cloud data captured via 3D laser scanners and LiDAR into intelligent, parametric Revit BIM models. We help architects, engineers, contractors, and facility managers digitize physical assets with geometric precision, facilitating seamless design coordination and eliminating costly on-site surprises.',
-        overviewImage: '/images/Services/Architectural.webp',
+        overviewImage: `${import.meta.env.BASE_URL}images/Services/Architectural.webp`,
         deliverables: {
             models: ['Architectural BIM Models', 'Structural BIM Models', 'MEP BIM Models', 'As-Built Revit Models'],
             docs: ['Floor Plans & Section Drawings', 'Reflected Ceiling Plans (RCP)', 'Building Elevations', 'Site & Topographic Plans'],
@@ -39,7 +36,7 @@ export const servicesData = [
         bullets: ['HVAC, Plumbing & Electrical', 'Clash Detection', 'LOD 300–400', 'Equipment Mapping'],
         ctaText: 'Upload MEP Point Cloud Data',
         overviewText: 'We convert raw point cloud scans into intelligent 3D MEP BIM models. Our services ensure that complex HVAC ductwork, piping networks, cable trays, and electrical conduits are mapped accurately within spatial constraints. This minimizes field installation conflicts and supports efficient maintenance.',
-        overviewImage: '/images/Services/MEP.webp',
+        overviewImage: `${import.meta.env.BASE_URL}images/Services/MEP.webp`,
         deliverables: {
             models: ['3D HVAC Ductwork Models', 'Piping & Plumbing System Models', 'Electrical & Cable Tray Models', 'Equipment & Plant Room BIM'],
             docs: ['MEP Schematics & Spool Drawings', 'Service Coordination Drawings', 'Plant Room Section Drawings', 'Riser Diagrams'],
@@ -64,7 +61,7 @@ export const servicesData = [
         bullets: ['Terrestrial & Mobile LiDAR', 'High Precision', 'LOD 100–500', 'Global Delivery'],
         ctaText: 'Upload Laser Scan Data',
         overviewText: 'Our Point Cloud to BIM conversion services process raw 3D scan data (LiDAR, photogrammetry, stationary scanners) into parametric Revit models. We handle complex geometric features, wall deviations, and historical elements, providing a reliable foundation for renovation planning and design development.',
-        overviewImage: '/images/Services/Point.webp',
+        overviewImage: `${import.meta.env.BASE_URL}images/Services/Point.webp`,
         deliverables: {
             models: ['As-Built Architectural BIM Models', 'Structural Frame Models', 'MEP & Utility Network Models', 'Topographical & Site Surface Models'],
             docs: ['2D As-Built Floor Plans', 'Cross Sections & Elevations', 'Roof & Reflected Ceiling Plans', 'Site Boundary Drawings'],
@@ -89,7 +86,7 @@ export const servicesData = [
         bullets: ['LOD 100–500', 'Concrete & Steel Models', 'As-Built Documentation', 'Coordination Ready'],
         ctaText: 'Upload Structural Point Clouds',
         overviewText: 'We specialize in converting point cloud data into detailed 3D structural BIM models. From concrete frames and foundation piles to complex structural steelwork, our models allow structural engineers and contractors to perform accurate structural analysis, retrofitting, and clash detection.',
-        overviewImage: '/images/Services/Structural.webp',
+        overviewImage: `${import.meta.env.BASE_URL}images/Services/Structural.webp`,
         deliverables: {
             models: ['Concrete Structural BIM Models', 'Structural Steelwork Models', 'Foundation & Substructure Models', 'As-Built Structural Models'],
             docs: ['Structural Floor & Framing Plans', 'Foundation Plans & Schedules', 'Structural Elevation Drawings', 'Section & Detail Drawings'],
@@ -114,7 +111,7 @@ export const servicesData = [
         bullets: ['CAD & BIM Deliverables', 'Verified Geometric Accuracy', 'Facility Management Ready', 'Global Standards Compliant'],
         ctaText: 'Upload As-Built Data',
         overviewText: 'Our As-Built Services deliver verified 2D CAD drawings and 3D BIM models representing the actual existing conditions of a structure. By removing outdated original drawings and replacing them with point cloud verified data, facility managers and owners gain total visibility over their properties.',
-        overviewImage: '/images/Services/As-Built.webp',
+        overviewImage: `${import.meta.env.BASE_URL}images/Services/As-Built.webp`,
         deliverables: {
             models: ['As-Built BIM Models (LOD 200–500)', 'Architectural & Structural As-Built Models', 'MEP As-Built Models', 'Digital Twin Base Models'],
             docs: ['As-Built Architectural Floor Plans', 'As-Built Reflected Ceiling Plans', 'As-Built Building Elevations & Sections', 'As-Built MEP Layout Drawings'],
@@ -139,7 +136,7 @@ export const servicesData = [
         bullets: ['Standards-Compliant Layered Files', 'CAD-Ready Deliverables', '±3-5mm Accuracy', 'Global Project Support'],
         ctaText: 'Upload Your Scan Data',
         overviewText: 'Our Scan to CAD services transform complex point cloud laser scans into clean, layered, and fully edited 2D CAD drawings. We produce architectural floor plans, building elevations, structural sections, and MEP layouts tailored to your layering standards and drafting conventions.',
-        overviewImage: '/images/Services/CAD.webp',
+        overviewImage: `${import.meta.env.BASE_URL}images/Services/CAD.webp`,
         deliverables: {
             models: ['2D Vectorized CAD Drawings', '3D Wireframe CAD Models', 'Topographic Contour Lines', 'Facade Profile Vectors'],
             docs: ['2D Architectural Floor Plans', 'Reflected Ceiling Plans (RCP)', 'Exterior Building Elevations', 'Building Cross Sections'],
@@ -164,12 +161,7 @@ export default function Services() {
 
     return (
         <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
-
-            {/* ========================================================= */}
-            {/* 1. HERO SECTION - الهوية البصرية الموحدة (Dark Navy + Radial Dots) */}
-            {/* ========================================================= */}
             <section className="relative bg-brandNavy text-white py-16 sm:py-20 overflow-hidden">
-                {/* خلفية النقاط الموحدة */}
                 <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -185,16 +177,9 @@ export default function Services() {
                 </div>
             </section>
 
-            {/* ========================================================= */}
-            {/* 2. INTERACTIVE TABS BAR - شريط الخدمات التفاعلي المثبت */}
-            {/* ========================================================= */}
-            {/* تم تغيير top-0 إلى top-20 و z-50 إلى z-40 ليكون أسفل الـ Navbar تماماً */}
-{/* 2. INTERACTIVE TABS BAR - شريط الخدمات التفاعلي المثبت */}
-{/* 2. INTERACTIVE TABS BAR - شريط الخدمات التفاعلي المثبت */}
       <div className="bg-white border-b-4 border-brandRed sticky top-20 z-40 shadow-md transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           
-          {/* خيار الموبايل: Select Dropdown */}
           <div className="block md:hidden">
             <label htmlFor="services-select" className="sr-only">Select Service</label>
             <select
@@ -211,7 +196,6 @@ export default function Services() {
             </select>
           </div>
 
-          {/* خيار الديسktop: التابز العادية */}
           <div className="hidden md:flex flex-wrap justify-center gap-2 lg:gap-3">
             {servicesData.map((service) => {
               const isActive = activeTab === service.id;
@@ -235,12 +219,8 @@ export default function Services() {
         </div>
       </div>
 
-            {/* ========================================================= */}
-            {/* 3. DYNAMIC SERVICE CONTENT AREA */}
-            {/* ========================================================= */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
 
-                {/* --- A. SUB-HEADER / BANNER --- */}
                 <section className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200/80 shadow-xs relative overflow-hidden">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                         <div className="max-w-3xl">
@@ -254,7 +234,6 @@ export default function Services() {
                                 {currentService.description}
                             </p>
 
-                            {/* Bullet Points */}
                             <div className="flex flex-wrap gap-2.5 mb-8">
                                 {currentService.bullets.map((bullet, idx) => (
                                     <span
@@ -267,7 +246,6 @@ export default function Services() {
                                 ))}
                             </div>
 
-                            {/* CTA Button */}
                             <Link
                                 to="/contact"
                                 className="inline-flex items-center justify-center bg-brandRed hover:bg-red-600 text-white text-xs sm:text-sm font-bold px-7 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95"
@@ -278,7 +256,6 @@ export default function Services() {
                     </div>
                 </section>
 
-                {/* --- B. OVERVIEW & VISUAL COMPARISON --- */}
                 <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="space-y-4">
                         <span className="text-xs font-bold text-brandRed uppercase tracking-widest block">Detailed Overview</span>
@@ -312,7 +289,6 @@ export default function Services() {
                     </div>
                 </section>
 
-                {/* --- C. OUR DELIVERABLES (4 GRID CARDS) --- */}
                 <section className="space-y-8">
                     <div className="text-center max-w-2xl mx-auto">
                         <span className="text-xs font-bold text-brandRed uppercase tracking-widest block mb-2">Scope of Work</span>
@@ -325,7 +301,6 @@ export default function Services() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {/* Card 1: Models */}
                         <div className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:border-brandRed/40 transition-all">
                             <div className="w-10 h-10 rounded-xl bg-brandRed/10 text-brandRed font-black flex items-center justify-center mb-4 text-base">
                                 01
@@ -340,7 +315,6 @@ export default function Services() {
                             </ul>
                         </div>
 
-                        {/* Card 2: Documentation */}
                         <div className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:border-brandRed/40 transition-all">
                             <div className="w-10 h-10 rounded-xl bg-brandRed/10 text-brandRed font-black flex items-center justify-center mb-4 text-base">
                                 02
@@ -355,7 +329,6 @@ export default function Services() {
                             </ul>
                         </div>
 
-                        {/* Card 3: Coordination */}
                         <div className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:border-brandRed/40 transition-all">
                             <div className="w-10 h-10 rounded-xl bg-brandRed/10 text-brandRed font-black flex items-center justify-center mb-4 text-base">
                                 03
@@ -370,7 +343,6 @@ export default function Services() {
                             </ul>
                         </div>
 
-                        {/* Card 4: Formats */}
                         <div className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:border-brandRed/40 transition-all flex flex-col justify-between">
                             <div>
                                 <div className="w-10 h-10 rounded-xl bg-brandRed/10 text-brandRed font-black flex items-center justify-center mb-4 text-base">
@@ -395,7 +367,6 @@ export default function Services() {
                     </div>
                 </section>
 
-                {/* --- D. BENEFITS SECTION (NUMERIC CARDS GRID) --- */}
                 <section className="space-y-8 pt-6">
                     <div className="text-center max-w-2xl mx-auto">
                         <span className="text-xs font-bold text-brandRed uppercase tracking-widest block mb-2">Value Add</span>
@@ -427,7 +398,6 @@ export default function Services() {
                     </div>
                 </section>
 
-                {/* --- E. BOTTOM CTA BANNER (Matching Case Studies Style) --- */}
                 <section className="bg-brandNavy text-white rounded-3xl p-8 sm:p-12 text-center flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden shadow-xl">
                     <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
