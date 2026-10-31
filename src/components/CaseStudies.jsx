@@ -49,7 +49,7 @@ export default function CaseStudies() {
                   href="javascript:void(0)"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-brandNavy to-slate-800 hover:from-brandRed hover:to-red-600 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition duration-300 shadow-md hover:shadow-lg"
                 >
-                  <Link to="\CaseStudies" >Explore Case Studies</Link>
+                  <Link to="/casestudies" >Explore Case Studies</Link>
                   <i className="fa-solid fa-arrow-right text-xs"></i>
                 </a>
               </div>

@@ -122,7 +122,7 @@ export default function About() {
             {/* 10+ Years */}
             <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-brandRed/50 transition-all duration-300">
               <div className="text-4xl sm:text-5xl font-black text-brandRed mb-2 font-mono">
-                <AnimatedCounter targetNumber={10} suffix="+" duration={6000} />
+                <AnimatedCounter targetNumber={25} suffix="+" duration={6000} />
               </div>
               <h3 className="text-lg font-bold mb-2">Years of Proven Experience</h3>
               <p className="text-xs text-gray-300 leading-relaxed">

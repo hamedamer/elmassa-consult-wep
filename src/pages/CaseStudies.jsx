@@ -4,54 +4,110 @@ import { Link } from 'react-router-dom';
 const caseStudies = [
   {
     id: 1,
-    title: "Industrial Facility Scan to Revit Services",
-    subtitle: "LOD 350 Industrial Scan to Revit Modeling",
+    title: "National Museum of Saudi Arabia",
+    subtitle: "3D Architectural & BIM Modeling",
     category: "Scan to BIM",
     location: "Saudi Arabia",
-    description: "Converted high-density point cloud data into precise Architectural & Structural Revit BIM models for facility expansion.",
+    description: "Contributed to the development of digital building representations, showcasing capabilities in 3D modeling and architectural documentation.",
     image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 2,
-    title: "Urban Utility GIS & Spatial Mapping",
-    category: "GIS & Spatial",
-    location: "Egypt",
-    description: "Developed comprehensive spatial database schema and network topology for large-scale infrastructure and electrical utilities.",
+    title: "Northern Borders Region Municipality Building",
+    subtitle: "Architectural Modeling & Technical Documentation",
+    category: "Scan to BIM",
+    location: "Arar, Saudi Arabia",
+    description: "Involved architectural modeling and technical documentation focusing on digital layout, façade elements, and building sections.",
     image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 3,
-    title: "Heritage Commercial Building Reconstruction",
+    title: "Al Rajhi Mall",
     subtitle: "As-Built 3D Laser Scan to BIM",
-    category: "3D Modeling",
-    location: "UAE",
-    description: "Captured complex architectural details using 3D laser scanning to build an accurate LOD 300 Revit model for restoration.",
+    category: "Scan to BIM",
+    location: "Saudi Arabia",
+    description: "Combined point cloud data with 3D modeling to develop a precise digital representation of the existing commercial building.",
     image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 4,
-    title: "Point Cloud to CAD Drafting & MEP Modeling",
-    subtitle: "Scan to CAD Conversion",
-    category: "CAD Conversion",
-    location: "Germany",
-    description: "Processed raw point cloud files to generate detailed 2D CAD architectural drawings and 3D MEP routing models.",
+    title: "Maaref School",
+    subtitle: "Digital Building Representation & 3D Modeling",
+    category: "3D Modeling",
+    location: "Saudi Arabia",
+    description: "Developed a 3D digital model representing architectural configuration and major building components for spatial coordination.",
     image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 5,
-    title: "Digital Twin Integration for Smart Infrastructure",
-    category: "Digital Twin & GIS",
-    location: "Saudi Arabia",
-    description: "Integrated 3D elevation surface models with GIS spatial layers for smart site monitoring and facility management.",
+    title: "The Palace – Museum Al Murabba",
+    subtitle: "Heritage Documentation & Point Cloud Processing",
+    category: "Heritage & CAD",
+    location: "Riyadh, Saudi Arabia",
+    description: "Heritage documentation focusing on traditional palace characteristics using point cloud data to produce technical architectural drawings.",
     image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   },
   {
     id: 6,
-    title: "Residential Complex Renovation As-Built",
-    subtitle: "LOD 300 Architectural BIM",
+    title: "Prince Mishal bin Abdulaziz Al Saud Mosque",
+    subtitle: "Digital Documentation & Laser Scanning",
+    category: "Scan to CAD",
+    location: "Riyadh, Saudi Arabia",
+    description: "Digital documentation using laser scanning to capture architectural geometry, distinctive features, and detailed CAD drawings.",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
+  },
+  {
+    id: 7,
+    title: "Stiftshöfe Braunschweig – Hutfiltern",
+    subtitle: "Historic Building Digital Recording",
     category: "Scan to BIM",
-    location: "United Kingdom",
-    description: "Delivered accurate as-built BIM models from laser scans to help architects eliminate site clashes during renovation.",
+    location: "Braunschweig, Germany",
+    description: "Heritage documentation and digital recording of a historic building, producing architectural drawings and 3D models of façades.",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
+  },
+  {
+    id: 8,
+    title: "TRANS HUB Mall",
+    subtitle: "Scan-to-BIM Services",
+    category: "Scan to BIM",
+    location: "New Administrative Capital, Egypt",
+    description: "Transformed laser scanning data into a 3D digital representation including geometry, façade, and internal spaces.",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
+  },
+  {
+    id: 9,
+    title: "Edfu Temple",
+    subtitle: "Cultural Heritage 3D Documentation",
+    category: "Heritage & GIS",
+    location: "Edfu, Aswan, Egypt",
+    description: "Cultural heritage project using point cloud data and 3D modeling techniques to document ancient architectural geometry.",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
+  },
+  {
+    id: 10,
+    title: "EL Max Pipeline Station",
+    subtitle: "Industrial Documentation & Piping Modeling",
+    category: "Industrial MEP",
+    location: "Alexandria, Egypt",
+    description: "Provided digital documentation and 3D modeling services representing existing industrial facilities, equipment, and piping.",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
+  },
+  {
+    id: 11,
+    title: "Khan El-Khalili – Al-Muizz Street",
+    subtitle: "Architectural Documentation & Façade Profiling",
+    category: "Scan to CAD",
+    location: "Historic Cairo, Egypt",
+    description: "Architectural documentation producing 2D CAD drawings representing historic building façades, features, and vertical dimensions.",
+    image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
+  },
+  {
+    id: 12,
+    title: "Little Venice Alexandria",
+    subtitle: "As-Built CAD & Technical Documentation",
+    category: "Scan to CAD",
+    location: "Alexandria, Egypt",
+    description: "Digital documentation using point cloud data as a reference for developing architectural CAD drawings and detailed geometry.",
     image: `${import.meta.env.BASE_URL}images/CaseStudy/images.png`
   }
 ];
@@ -70,7 +126,7 @@ export default function CaseStudies() {
             Case <span className="text-brandRed">Studies</span>
           </h1>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
-            Explore our featured Scan to BIM, GIS mapping, Point Cloud processing, and 3D modeling projects delivered with high accuracy.
+            Explore our featured Scan to BIM, heritage documentation, point cloud processing, and 3D modeling projects delivered with high accuracy.
           </p>
         </div>
       </section>
