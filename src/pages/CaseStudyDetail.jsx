@@ -336,6 +336,7 @@ export default function CaseStudyDetail() {
   };
 
   return (
+    
     <div className="bg-gray-50 min-h-screen">
       <section className="relative bg-brandNavy text-white py-16 overflow-hidden">
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>

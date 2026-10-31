@@ -22,6 +22,7 @@ export default function Hero() {
             <Link to="/contact" className="border border-gray-400 hover:border-white text-white font-semibold px-8 py-3.5 rounded-md text-center transition">
               Request Proposal
             </Link>
+            
           </div>
         </div>
       </div>
